@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopta un Gatito</title>
+    <link rel="stylesheet" href="cats.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Adopta un Gatito</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#adopcion">Adopción</a></li>
+                    <li><a href="#tenencia">Tenencia Responsable</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="section fade-in">
+        <div class="content-wrapper">
+            <h2>Bienvenido a Adopta un Gatito</h2>
+            <p>Si estás considerando adoptar un gatito, ¡estás en el lugar correcto!</p>
+            <p>Aquí podrás conocer todos los beneficios de la adopción y cómo contribuir a mejorar la vida de un gato y la tuya propia.</p>
+            <p>Adoptar es un acto de amor y responsabilidad.</p>
+            <button onclick="document.getElementById('adopcion').scrollIntoView({ behavior: 'smooth' });">Comienza Ahora</button>
+        </div>
+    </section>
+
+    <section id="adopcion" class="section fade-in">
+        <div class="content-wrapper">
+            <h2>¿Por qué Adoptar?</h2>
+            <p>Adoptar un gato no solo les ofrece una nueva oportunidad en la vida, sino que también ayuda a reducir la sobrepoblación en refugios y contribuye a la lucha contra la cría irresponsable. Los gatitos adoptados son vacunados, esterilizados y tienen derecho a recibir atención médica continua.</p>
+            <p>Al adoptar, no solo brindas un hogar lleno de amor a un gatito, sino que también contribuyes a la construcción de una sociedad más responsable.</p>
+            <br>
+            <ul>
+                <li><strong>Reduce la sobrepoblación de animales en refugios.</strong></li>
+                <li><strong>Ganas un compañero leal que te brindará años de cariño y compañía.</strong></li>
+                <li><strong>Ayudas a la causa animal y eres parte de un cambio positivo en la comunidad.</strong></li>
+            </ul>
+            <button onclick="document.getElementById('tenencia').scrollIntoView({ behavior: 'smooth' });">Conoce la Tenencia Responsable</button>
+        </div>
+    </section>
+
+    <section id="tenencia" class="section fade-in">
+        <div class="content-wrapper">
+            <h2>Tenencia Responsable</h2>
+            <p>La adopción es solo el primer paso. Una vez que tengas a tu gatito en casa, es fundamental que le proporciones un hogar seguro, saludable y estimulante. Esto implica cumplir con sus necesidades básicas y garantizar su bienestar a largo plazo.</p>
+            <br>
+            <ul>
+                <li><strong>Alimentación:</strong> Debes proporcionarle una dieta adecuada que le brinde todos los nutrientes necesarios para su desarrollo y salud.</li>
+                <li><strong>Salud:</strong> Realiza visitas periódicas al veterinario, mantén sus vacunas al día y asegúrate de que esté libre de parásitos.</li>
+                <li><strong>Seguridad:</strong> Mantén a tu gatito dentro de casa para evitar accidentes o enfermedades, y asegúrate de que el hogar sea un lugar seguro para él.</li>
+                <li><strong>Enriquecimiento:</strong> Los gatos necesitan estímulos mentales y físicos. Proporcionales juguetes interactivos, rascadores y espacios para trepar.</li>
+            </ul>
+            <button onclick="document.getElementById('beneficios').scrollIntoView({ behavior: 'smooth' });">Descubre los Beneficios de Adoptar</button>
+        </div>
+    </section>
+
+    <section id="beneficios" class="section fade-in">
+        <div class="content-wrapper">
+            <h2>Beneficios de Adoptar</h2>
+            <p>Adoptar no solo es una responsabilidad, sino una experiencia increíble que trae muchos beneficios tanto para ti como para tu nuevo compañero. Aquí te mostramos algunos de los beneficios de la adopción:</p>
+            <br>
+            <ul>
+                <li><strong>Aumenta tu bienestar emocional:</strong> Los gatos son conocidos por ser compañeros cariñosos que ofrecen apoyo emocional, reduciendo el estrés y la ansiedad.</li>
+                <li><strong>Contribuye a una sociedad más ética:</strong> Adoptar en lugar de comprar promueve un modelo de respeto hacia los animales y fomenta una cultura más responsable.</li>
+                <li><strong>Mejorar la vida del gatito:</strong> Adoptar le da una nueva oportunidad en la vida y le ofrece un hogar donde será cuidado y amado.</li>
+            </ul>
+            <button onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });">Contáctanos</button>
+        </div>
+    </section>
+
+    <section id="contacto" class="section fade-in">
+        <div class="content-wrapper">
+            <h2>Contacto</h2>
+            <p>Si estás listo para adoptar o tienes dudas, ¡nos encantaría ayudarte! Contáctanos para más información sobre cómo puedes hacer la diferencia.</p>
+            <p>Email: adoptaungatito@gmail.com</p>
+            <p>Teléfono: +54 11 3349-1223</p>
+            <button onclick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' });" class="back-to-top">Volver al Inicio</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Adopta un Gatito. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                } else {
+                    entry.target.classList.remove('fade-in');
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
